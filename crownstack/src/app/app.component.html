@@ -1,0 +1,37 @@
+<div class="toolbar row col-md-12" role="banner">
+  <div class="col-md-6">
+    <span>RENTAL MANAGEMENT SYSTEM</span>
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      SELECT LOCATION
+    </button>
+    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+      <li class="dropdown-submenu" *ngFor="let location of loc">
+        <a class="dropdown-item" tabindex="-1" href="#">{{location.name}}</a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-item" *ngFor="let branch of location.branches">
+            <a class="dropdown-item" (click)="subCat(branch)"> {{branch.name}} </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="content" role="main" *ngIf="sharedService.showHomeText">
+  <span> WELCOME TO </span>
+  <span> RENTAL MANAGEMENT SYSTEM</span>
+  <span style="font-size: 17px;margin-top: 20px;"> PLEASE SELECT A LOCATION</span>
+</div>
+
+
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+
+</div>
+
+<div class="footer">
+</div>
