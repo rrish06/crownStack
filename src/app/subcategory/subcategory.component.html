@@ -1,0 +1,13 @@
+<div class="row col-md-12" *ngIf="!showHomeText && showSubCategory" style="margin-top: 20vh;">
+    <div class="row col-md-12">
+        <span style="cursor: pointer;" [routerLink]="['/category']" routerLinkActive="router-link-active">Equipment
+            Catalog
+            / </span> {{breadCrum}}
+    </div>
+    <div class="col-md-3" *ngFor="let data of subcategory.subcategories">
+        <img src="assets/category/subcategory/{{data.image}}" class="card-img-top" style="height: 25vh;width:10vw;">
+        <div class="card-body">
+            <a href="#" class="btn btn-primary" style="color: white;"> {{data.name}} </a>
+        </div>
+    </div>
+</div>
